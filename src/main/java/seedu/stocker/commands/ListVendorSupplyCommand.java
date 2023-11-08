@@ -11,7 +11,7 @@ public class ListVendorSupplyCommand extends Command {
     public static final String COMMAND_WORD = "listVendorSupply";
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Lists the drugs supplied by a specific vendor. "
             + "Parameters: VENDOR_NAME" + System.lineSeparator()
-            + "Example: " + COMMAND_WORD + " Moderna";
+            + "Example: " + COMMAND_WORD + " /v Moderna";
 
     private final String vendorName;
 
@@ -42,7 +42,8 @@ public class ListVendorSupplyCommand extends Command {
         if (suppliedDrugs.isEmpty()) {
             return new CommandResult<>("No drugs supplied by " + vendorName);
         } else {
-            return new CommandResult<>("Drugs supplied by " + vendorName + ": " + String.join(", ", suppliedDrugs));
+            return new CommandResult<>("Drugs supplied by " + vendorName + ": "
+                    + String.join(", ", suppliedDrugs));
         }
     }
 }

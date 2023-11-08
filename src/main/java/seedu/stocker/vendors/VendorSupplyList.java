@@ -32,6 +32,22 @@ public class VendorSupplyList {
     }
 
     /**
+     * Checks if a specific drug is supplied by a vendor.
+     *
+     * @param vendorName The name of the vendor.
+     * @param drugName The name of the drug to check.
+     * @return true if the drug is supplied by the vendor, false otherwise.
+     */
+    public static boolean containsDrug(String vendorName, String drugName) {
+        List<String> suppliedDrugs = vendorSuppliedDrugs.get(vendorName);
+        if (suppliedDrugs != null) {
+            return suppliedDrugs.contains(drugName);
+        } else {
+            return false; // Vendor not found
+        }
+    }
+
+    /**
      * Returns the mapping of vendors to the drugs they supply.
      *
      * @return A map where each key (vendor name) is associated with a list of drugs they supply.

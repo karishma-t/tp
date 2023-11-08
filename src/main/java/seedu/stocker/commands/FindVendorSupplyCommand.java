@@ -12,7 +12,7 @@ public class FindVendorSupplyCommand extends Command {
     public static final String COMMAND_WORD = "findVendorSupply";
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Lists the vendors that supply a specific drug. "
             + "Parameters: DRUG_NAME" + System.lineSeparator()
-            + "Example: " + COMMAND_WORD + " Paracetamol";
+            + "Example: " + COMMAND_WORD + " /n Paracetamol";
 
     private final String drugName;
 
